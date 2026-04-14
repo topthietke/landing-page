@@ -1,0 +1,1 @@
+Tránh nhầm lẫn Khi sử dụng implements nền sử lớp trừ tượng vì khi gọi ra đăng nào cũng phải ghi đè

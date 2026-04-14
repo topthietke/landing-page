@@ -1,0 +1,3 @@
+mixin Readbook {
+  void develop();
+}

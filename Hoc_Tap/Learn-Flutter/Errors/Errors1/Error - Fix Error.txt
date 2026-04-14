@@ -1,0 +1,52 @@
+1. Hệ thống báo lỗi:
+    Resolving dependencies...
+    Downloading packages...
+    matcher 0.12.18 (0.12.19 available)
+    meta 1.17.0 (1.18.2 available)
+    test_api 0.7.9 (0.7.11 available)
+    vector_math 2.2.0 (2.3.0 available)
+    Got dependencies!
+    4 packages have newer versions incompatible with dependency constraints.
+    Try `flutter pub outdated` for more information.
+    Launching lib\main.dart on Windows in debug mode...
+    Error: Unable to find suitable Visual Studio toolchain. Please run `flutter doctor` for more details.
+
+- Chạy lệnh flutter doctor: 
+    Doctor summary (to see all details, run flutter doctor -v):
+    [√] Flutter (Channel stable, 3.41.2, on Microsoft Windows [Version 10.0.26200.8037], locale en-US)
+    [√] Windows Version (Windows 11 or higher, 25H2, 2009)
+    [√] Android toolchain - develop for Android devices (Android SDK version 36.1.0)
+    [√] Chrome - develop for the web
+    [!] Visual Studio - develop Windows apps (Visual Studio Build Tools 2022 17.14.21 (November 2025))
+        X The current Visual Studio installation is incomplete.
+        Please use Visual Studio Installer to complete the installation or reinstall Visual Studio.
+    [√] Connected device (3 available)
+    [√] Network resources
+
+    ! Doctor found issues in 1 category.
+
+Cách xử lý: 
+    Lỗi Visual Studio Toolchain
+    Lỗi này xảy ra vì Flutter trên Windows cần Visual Studio (không phải VS Code) với C++ build tools để chạy ứng dụng desktop.
+    Cách fix:
+    1. Cài Visual Studio (miễn phí)
+
+    Tải Visual Studio Community tại visualstudio.microsoft.com
+    Trong quá trình cài, chọn workload: "Desktop development with C++"
+
+    2. Sau khi cài xong, kiểm tra:
+    bashflutter doctor
+    3. Nếu vẫn báo lỗi, chạy thêm:
+    bashflutter doctor --android-licenses
+
+    Hoặc nếu bạn chỉ muốn chạy trên Android/Web (không cần VS):
+    bash# Chạy trên Chrome
+    flutter run -d chrome
+
+    # Chạy trên Android emulator/device
+    flutter run -d android
+
+    Lưu ý thêm:
+    Bạn cũng có 4 packages cũ hơn, có thể cập nhật bằng:
+    bashflutter pub upgrade
+    Bạn đang muốn chạy app trên Windows desktop, Android, hay Web?
