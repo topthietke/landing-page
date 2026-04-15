@@ -10,7 +10,7 @@ class CvProfileSeeder extends Seeder
     public function run(): void
     {
         // ── 1. PROFILE ────────────────────────────────────────────────────────
-        $profileId = DB::table('cv_profiles')->insertGetId([
+        $profileId = DB::table('informationss')->insertGetId([
             'full_name'       => 'Trần Ngọc Tú',
             'title'      => 'Lập trình viên PHP Laravel',
             'dob'        => '23/04/1986',
@@ -70,7 +70,7 @@ class CvProfileSeeder extends Seeder
 
         foreach ($educations as $edu) {
             DB::table('cv_educations')->insert(array_merge(
-                ['cv_profile_id' => $profileId, 'created_at' => now(), 'updated_at' => now()],
+                ['informations_id' => $profileId, 'created_at' => now(), 'updated_at' => now()],
                 $edu
             ));
         }
@@ -86,7 +86,7 @@ class CvProfileSeeder extends Seeder
 
         foreach ($skills as $skill) {
             DB::table('cv_skills')->insert(array_merge(
-                ['cv_profile_id' => $profileId, 'created_at' => now(), 'updated_at' => now()],
+                ['informations_id' => $profileId, 'created_at' => now(), 'updated_at' => now()],
                 $skill
             ));
         }
@@ -174,7 +174,7 @@ class CvProfileSeeder extends Seeder
 
         foreach ($workExperiences as $work) {
             $workId = DB::table('cv_work_experiences')->insertGetId([
-                'cv_profile_id' => $profileId,
+                'informations_id' => $profileId,
                 'company'       => $work['company'],
                 'position'      => $work['position'],
                 'period'        => $work['period'],
@@ -228,7 +228,7 @@ class CvProfileSeeder extends Seeder
 
         foreach ($activities as $activity) {
             $actId = DB::table('cv_activities')->insertGetId([
-                'cv_profile_id' => $profileId,
+                'informations_id' => $profileId,
                 'org'           => $activity['org'],
                 'detail'        => $activity['detail'],
                 'sort_order'    => $activity['sort_order'],
@@ -263,7 +263,7 @@ class CvProfileSeeder extends Seeder
 
         foreach ($languages as $lang) {
             DB::table('cv_languages')->insert(array_merge(
-                ['cv_profile_id' => $profileId, 'created_at' => now(), 'updated_at' => now()],
+                ['informations_id' => $profileId, 'created_at' => now(), 'updated_at' => now()],
                 $lang
             ));
         }

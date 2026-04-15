@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('cv_work_experiences', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('cv_profile_id')->constrained('cv_profiles')->cascadeOnDelete();
+            $table->foreignId('informations_id')->constrained('informationss')->cascadeOnDelete();
             $table->string('company');
             $table->string('position');
             $table->string('period', 100)->nullable();

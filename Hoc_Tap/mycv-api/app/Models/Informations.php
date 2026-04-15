@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Informations extends Model
 {
     use HasFactory;    
-    protected $table = 'cv_profiles';
+    protected $table = 'informationss';
     protected $fillable = [
         'name',
         'title',
