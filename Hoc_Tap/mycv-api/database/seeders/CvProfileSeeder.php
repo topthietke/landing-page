@@ -10,7 +10,7 @@ class CvProfileSeeder extends Seeder
     public function run(): void
     {
         // ── 1. PROFILE ────────────────────────────────────────────────────────
-        $profileId = DB::table('informationss')->insertGetId([
+        $profileId = DB::table('informations')->insertGetId([
             'full_name'       => 'Trần Ngọc Tú',
             'title'      => 'Lập trình viên PHP Laravel',
             'dob'        => '23/04/1986',

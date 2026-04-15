@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('cv_activities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('informations_id')->constrained('informationss')->cascadeOnDelete();
+            $table->foreignId('informations_id')->constrained('informations')->cascadeOnDelete();
             $table->string('org');
             $table->text('detail')->nullable();
             $table->integer('sort_order')->default(0);

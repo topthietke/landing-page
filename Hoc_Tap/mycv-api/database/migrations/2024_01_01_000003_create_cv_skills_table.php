@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('cv_skills', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('informations_id')->constrained('informationss')->cascadeOnDelete();
+            $table->foreignId('informations_id')->constrained('informations')->cascadeOnDelete();
             $table->text('tech');
             $table->string('level', 100)->nullable();
             $table->integer('sort_order')->default(0);

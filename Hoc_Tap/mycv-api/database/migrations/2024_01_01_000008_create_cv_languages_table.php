@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('cv_languages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('informations_id')->constrained('informationss')->cascadeOnDelete();
+            $table->foreignId('informations_id')->constrained('informations')->cascadeOnDelete();
             $table->string('lang', 100);
             $table->text('desc')->nullable();
             $table->integer('sort_order')->default(0);
