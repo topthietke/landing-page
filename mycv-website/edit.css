@@ -1,0 +1,485 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f2f5;
+    font-size: 14px;
+    color: #222;
+
+    padding-top: 110px; /* Chiều cao Navbar + 40px khoảng cách mong muốn */
+}
+
+/* Sidebar Nav */
+.cv-sidebar {
+    position: sticky;
+    top: 20px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.cv-sidebar .sidebar-header {
+    background: #111;
+    color: #fff;
+    padding: 16px 20px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.cv-sidebar .nav-link {
+    color: #444;
+    padding: 10px 20px;
+    font-size: 13px;
+    border-left: 3px solid transparent;
+    transition: all 0.18s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cv-sidebar .nav-link:hover,
+.cv-sidebar .nav-link.active {
+    background: #f5f5f5;
+    color: #111;
+    border-left-color: #111;
+}
+
+.cv-sidebar .nav-link .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ccc;
+    flex-shrink: 0;
+}
+
+.cv-sidebar .nav-link.active .dot,
+.cv-sidebar .nav-link:hover .dot {
+    background: #111;
+}
+
+/* Section cards */
+.form-section {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 24px;
+    overflow: hidden;
+    scroll-margin-top: 20px;
+}
+
+.section-header {
+    background: #111;
+    color: #fff;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-header h5 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.section-body {
+    padding: 24px;
+}
+
+/* Form controls */
+.form-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+}
+
+.form-control,
+.form-select {
+    font-size: 13.5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 9px 13px;
+    background: #fafafa;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: #fff;
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Photo upload */
+.photo-upload-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.photo-preview {
+    width: 90px;
+    height: 110px;
+    border-radius: 8px;
+    border: 2px dashed #ccc;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-placeholder {
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+    padding: 8px;
+}
+
+/* Dynamic rows */
+.dynamic-row {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.dynamic-row:last-child {
+    margin-bottom: 0;
+}
+
+.btn-remove-row {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #fee;
+    border: 1px solid #f5c6c6;
+    color: #c0392b;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.btn-remove-row:hover {
+    background: #fdd;
+}
+
+.btn-add-row {
+    border: 1.5px dashed #aaa;
+    background: transparent;
+    color: #555;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.15s;
+    margin-top: 10px;
+}
+
+.btn-add-row:hover {
+    border-color: #111;
+    color: #111;
+    background: #f5f5f5;
+}
+
+/* Sub-list (bullets) */
+.bullet-list-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    align-items: flex-start;
+}
+
+.bullet-list-item input {
+    flex: 1;
+}
+
+.btn-remove-bullet {
+    flex-shrink: 0;
+    width: 26px;
+    height: 34px;
+    border-radius: 6px;
+    background: #fee;
+    border: 1px solid #f5c6c6;
+    color: #c0392b;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-remove-bullet:hover {
+    background: #fdd;
+}
+
+.btn-add-bullet {
+    font-size: 12px;
+    color: #888;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.btn-add-bullet:hover {
+    color: #111;
+}
+
+/* Tags */
+.tag-input-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 10px;
+    min-height: 44px;
+    cursor: text;
+}
+
+.tag-input-wrap:focus-within {
+    border-color: #111;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+}
+
+.tag-chip {
+    background: #111;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px 8px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.tag-chip .remove-tag {
+    cursor: pointer;
+    opacity: 0.7;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.tag-chip .remove-tag:hover {
+    opacity: 1;
+}
+
+.tag-input-field {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 13px;
+    min-width: 120px;
+    flex: 1;
+    color: #222;
+}
+
+/* Save bar */
+.save-bar {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 100;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.btn-save {
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.18s, transform 0.1s;
+}
+
+.btn-save:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+.btn-preview {
+    background: #fff;
+    color: #111;
+    border: 1.5px solid #111;
+    border-radius: 8px;
+    padding: 9px 22px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s;
+}
+
+.btn-preview:hover {
+    background: #f5f5f5;
+}
+
+.save-status {
+    font-size: 13px;
+    color: #27ae60;
+    display: none;
+}
+
+/* Section number badge */
+.sec-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 9px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Page title */
+.page-title-bar {
+    background: #111;
+    color: #fff;
+    padding: 18px 30px;
+    margin-bottom: 28px;
+    border-radius: 0;
+}
+
+.page-title-bar h1 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.page-title-bar p {
+    font-size: 12px;
+    margin: 4px 0 0;
+    opacity: 0.6;
+}
+
+/* Divider inside section */
+.sub-section-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 18px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+}
+
+.level-select {
+    width: 160px;
+}
+
+@media (max-width: 991px) {
+    .cv-sidebar {
+        position: relative;
+        top: 0;
+    }
+}
+
+
+
+
+/* CSS sidebar */
+/* Tùy chỉnh thanh Navbar */
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Cần set width vì fixed làm mất chiều rộng tự động */
+    z-index: 1000;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Logo */
+.navbar-brand {
+    color: #2d9d78 !important;
+    /* Màu xanh lục của logo */
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Các liên kết Menu */
+.nav-link {
+    color: #555 !important;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2d9d78 !important;
+}
+
+/* Gạch chân dưới mục đang chọn (Home) */
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2d9d78;
+    border-radius: 2px;
+}
+
+/* Nút Login */
+.btn-login {
+    background-color: #009b72;
+    /* Màu xanh đậm hơn */
+    color: white !important;
+    border-radius: 30px;
+    padding: 8px 25px;
+    font-weight: 600;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #007a5a;
+}
